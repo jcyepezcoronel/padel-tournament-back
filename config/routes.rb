@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root "user#index"
+  #comentario para revisar cambio de cuenta de git
 end
