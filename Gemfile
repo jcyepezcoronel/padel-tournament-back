@@ -25,7 +25,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # https://www.mongodb.com/docs/ruby-driver/master/installation/
-gem "mongo", "~> 2"
+gem 'mongoid'
 
 # https://github.com/rmosolgo/graphql-ruby
 gem 'graphql'
