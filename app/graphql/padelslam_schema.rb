@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Main app schema
 class PadelslamSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
@@ -9,10 +10,11 @@ class PadelslamSchema < GraphQL::Schema
 
   # GraphQL-Ruby calls this when something goes wrong while running a query:
   def self.type_error(err, context)
-    # if err.is_a?(GraphQL::InvalidNullError)
-    #   # report to your bug tracker here
-    #   return nil
-    # end
+    if err.is_a?(GraphQL::InvalidNullError)
+      # report to your bug tracker here
+      return 'Invalid null'
+    end
+
     super
   end
 
@@ -24,7 +26,7 @@ class PadelslamSchema < GraphQL::Schema
   end
 
   # Stop validating when it encounters this many errors:
-  validate_max_errors(100)
+  validate_max_errors(10)
 
   # Relay-style Object Identification:
 
