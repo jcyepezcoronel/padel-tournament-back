@@ -2,7 +2,7 @@
 
 module Types
   class MutationType < Types::BaseObject
-    field :delete, mutation: Mutations::User::Delete
+    field :user_delete, mutation: Mutations::User::Delete
     field :register_user, mutation: Mutations::RegisterUser
     # TODO: remove me
     field :test_field, String, null: false, description: "An example field added by the generator"
