@@ -28,18 +28,12 @@ module UserInteractor
 
     def call
       category = Category.find(context.user_params[:categoryId])
-      print '--------------------------------'
-      print category
-      print '--------------------------------'
       context.user = User.new(
         name: context.user_params[:name],
         email: context.user_params[:email],
         password: context.user_params[:password],
         category: category
       )
-      print '--------------------------------'
-      print context
-      print '--------------------------------'
       context.user.save!
       context.token = 'test'
     end
